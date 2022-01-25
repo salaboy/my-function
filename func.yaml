@@ -1,0 +1,23 @@
+name: my-function
+namespace: ""
+runtime: node
+image: ""
+imageDigest: ""
+builder: gcr.io/paketo-buildpacks/builder:base
+builders:
+  base: gcr.io/paketo-buildpacks/builder:base
+  default: gcr.io/paketo-buildpacks/builder:base
+  full: gcr.io/paketo-buildpacks/builder:full
+buildpacks: []
+healthEndpoints: {}
+volumes: []
+envs: []
+annotations: {}
+options: {}
+labels: []
+build: git                                          # required, specify `git` build type
+git:
+  url: https://github.com/salaboy/my-function.git   # required, git repository with the function source code
+  revision: main                                    # optional, git revision to be used (branch, tag, commit)
+  # contextDir: myfunction                          # optional, needed only if the function is not located
+                                                    # in the repository root folder
